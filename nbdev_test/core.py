@@ -35,6 +35,7 @@ def get_data(n_samples = 1000, n_outliers = 100):
     return X,y
 
 X,y = get_data()
+assert len(X)==len(y)
 plt.plot(X, y, 'o', label = 'Data')
 plt.legend()
 
@@ -67,3 +68,4 @@ def make_experiment(X, y, n = 5):
     print("Model saved in run %s" % mlflow.active_run().info.run_uuid)
     return pipeline
 model = make_experiment(X,y)
+assert len(model.predict(X))==len(y)

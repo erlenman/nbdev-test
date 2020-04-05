@@ -11,14 +11,3 @@ Nothing to install
 ## How to use
 
 Do we have any example?
-
-```
-say_hello("Anybody?")
-```
-
-
-
-
-    'Hello Anybody?!'
-
-
