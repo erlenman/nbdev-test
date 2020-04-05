@@ -1,7 +1,6 @@
 {
   "nbdev_test": {
     "Overview": "/",
-    "Test nbdev, papermill, mlflow, yellowbricks": "/core",
-    "Title": "/Homework_2_Custom_models_and_its_evaluation"
+    "Test nbdev, papermill, mlflow, yellowbricks": "/core"
   }
 }

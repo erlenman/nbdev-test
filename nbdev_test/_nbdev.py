@@ -2,9 +2,11 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"get_data": "00_core.ipynb",
+         "make_experiment": "00_core.ipynb",
+         "model": "00_core.ipynb"}
 
-modules = []
+modules = ["core.py"]
 
 doc_url = "https://erlenman.github.io/nbdev_test/"
 
