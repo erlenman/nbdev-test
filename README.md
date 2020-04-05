@@ -12,7 +12,7 @@ Nothing to install
 
 Do we have any example?
 
-```python
+```
 say_hello("Anybody?")
 ```
 

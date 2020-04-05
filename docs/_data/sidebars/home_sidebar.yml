@@ -10,8 +10,11 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: My module name
+      title: Test nbdev, papermill, mlflow, yellowbricks
       url: /core
+    - output: web,pdf
+      title: Title
+      url: /Homework_2_Custom_models_and_its_evaluation
     output: web
     title: nbdev_test
   output: web

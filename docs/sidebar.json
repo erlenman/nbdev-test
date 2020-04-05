@@ -1,6 +1,7 @@
 {
   "nbdev_test": {
     "Overview": "/",
-    "My module name": "/core"
+    "Test nbdev, papermill, mlflow, yellowbricks": "/core",
+    "Title": "/Homework_2_Custom_models_and_its_evaluation"
   }
 }
