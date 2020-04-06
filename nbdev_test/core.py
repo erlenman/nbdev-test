@@ -50,22 +50,28 @@ import mlflow
 import mlflow.sklearn
 
 def make_experiment(X, y, n = 5):
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
+    with mlflow.start_run() as run:
+        experiment = 'polynomial regression'
+        mlflow.set_experiment(experiment)
+        mlflow.log_param("degree", n)
+        run_id = run.info.run_id
+        print(run.info)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
 
-    polynomial_features = PolynomialFeatures(degree = n) # create instance of transformer
-    regression = LinearRegression() # create instance of model
+        polynomial_features = PolynomialFeatures(degree = n) # create instance of transformer
+        regression = LinearRegression() # create instance of model
 
-    # make pipeline as list of pairs (<stage name>, <stage object>):
-    pipeline = Pipeline([("polynomial_features", polynomial_features), # augment data
-                       ("linear_regression", regression)]) # apply linear regression
+        # make pipeline as list of pairs (<stage name>, <stage object>):
+        pipeline = Pipeline([("polynomial_features", polynomial_features), # augment data
+                           ("linear_regression", regression)]) # apply linear regression
 
-    # from now we can treat pipeline as a single model, applying all stages when using fit() and predict()
-    pipeline.fit(X_train, y_train)
-    score = pipeline.score(X_test, y_test)
-    print("Score: %s" % score)
-    mlflow.log_metric("score", score)
-    mlflow.sklearn.log_model(pipeline, "model")
-    print("Model saved in run %s" % mlflow.active_run().info.run_uuid)
-    return pipeline
+        # from now we can treat pipeline as a single model, applying all stages when using fit() and predict()
+        pipeline.fit(X_train, y_train)
+        score = pipeline.score(X_test, y_test)
+        print("Score: %s" % score)
+        mlflow.log_metric("score", score)
+        mlflow.sklearn.log_model(pipeline, "model")
+        print("Model saved in run %s" % mlflow.active_run().info.run_uuid)
+        return pipeline
 model = make_experiment(X,y)
-assert len(model.predict(X))==len(y)
+#assert len(model.predict(X))==len(y)

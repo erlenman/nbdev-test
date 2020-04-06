@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/SynologyDrive/ML/nbdev-test/mlruns/1/98bf0307f7214cd19545015fe3829018/artifacts
+end_time: 1586124384039
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: deleted
+name: ''
+run_id: 98bf0307f7214cd19545015fe3829018
+run_uuid: 98bf0307f7214cd19545015fe3829018
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1586124383968
+status: 3
+tags: []
+user_id: quasi
